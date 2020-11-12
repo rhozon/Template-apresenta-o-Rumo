@@ -1,0 +1,230 @@
+% Copyright 2019 Clara Eleonore Pavillet
+
+% Author: Clara Eleonore Pavillet
+% Description: This is an unofficial Oxford University Beamer Template I made from scratch. Feel free to use it, modify it, share it.
+% Version: 1.0
+
+\documentclass{beamer}
+\input{Theme/Packages.tex}
+\usepackage{latexsym}
+\usepackage{fontawesome}
+%\usepackage{fontawesome5}
+%==pacote para grifar================
+\usepackage{soul}
+\makeatletter
+\let\HL\hl
+\renewcommand\hl{%
+  \let\set@color\beamerorig@set@color
+  \let\reset@color\beamerorig@reset@color
+  \HL}
+\makeatother
+%como usar:
+%\begin{block}{Atenção}
+   % Algum \hl{texto} aqui
+%\end{block}
+ 
+%fim pacote do Beamer para grifar
+\usetheme{oxonian}
+
+%----------------------------------------------------
+
+%================CAPA=================================
+\title{Template de apresentação}
+\titlegraphic{\includegraphics[width=5.5cm]{rumo-logistica-trem.jpg}}
+
+
+
+\author{Rodrigo Hermont Ozon}
+\institute{\href{https://rumolog.com/}{\textit{Cientista de Dados na Rumo logística}}}
+
+\date{Outubro de 2020} %\today
+%===============fim da capa =========================
+
+%----------------------------------------------------
+
+%===============Sumário==============================
+\begin{document}
+
+{\setbeamertemplate{footline}{} 
+\frame{\titlepage}}
+
+\section*{Conteúdo}
+\begin{frame}{Conteúdo}
+
+\tableofcontents
+\end{frame}
+%========Fim do Sumário==============================
+
+%----------------------------------------------------
+
+%==========Primeira Seção=============================
+
+\section{Primeira seção}
+    \begin{frame}[plain]
+        \vfill
+      \centering
+      \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}\insertsectionhead\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt} \\
+        \LARGE{\faFileTextO}
+      \end{beamercolorbox}
+      \vfill
+  \end{frame}
+
+%======================================================
+\begin{frame}{Primeira seção}
+\vspace{-.45cm}
+\textbf{Projeto Inteligência de Mercado e \textit{Pricing}} 
+%======================================================
+
+\end{frame}
+%======================================================
+
+%------------------------------------------------------
+
+%======================================================
+
+
+%==========Segunda Seção=============================
+
+\section{Segunda seção}
+    \begin{frame}[plain]
+        \vfill
+      \centering
+      \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}\insertsectionhead\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt} \\
+        \LARGE{\faFileTextO}
+      \end{beamercolorbox}
+      \vfill
+  \end{frame}
+
+%======================================================
+\begin{frame}{Segunda seção}
+\vspace{-.45cm}
+\textbf{Projeto Inteligência de Mercado e \textit{Pricing}} 
+%======================================================
+
+Para inserir código R use:
+
+<< comment=NA >>=
+
+# Nem todas as bibliotecas estao disponiveis 
+
+#pra rodar aqui no overleaf
+
+variavel<-c(1.2,3.2,1.1,5.2,2,1,3,5,6,7,9)
+
+@
+
+\end{frame}
+%======================================================
+
+
+
+
+%==========Terceira Seção=============================
+
+\section{Terceira seção}
+    \begin{frame}[plain]
+        \vfill
+      \centering
+      \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}\insertsectionhead\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt} \\
+        \LARGE{\faFileTextO}
+      \end{beamercolorbox}
+      \vfill
+  \end{frame}
+
+%======================================================
+\begin{frame}{Terceira seção}
+\vspace{-.45cm}
+\textbf{Projeto Inteligência de Mercado e \textit{Pricing}} 
+%======================================================
+
+Caso queira gerar um gráfico configure assim o chunk:
+
+<<echo=FALSE, cache=TRUE, fig.pos="h", fig.height=2, fig.width=4, fig.cap="Gráfico 1" >>=
+
+variavelx<-c(1.2,3.2,1.1,5.2,2,1,3,5,6,7,9)
+
+variavely<-c(3,2,1,4,5,7,9,0,1,2.3,2)
+
+dados<-data.frame(variavelx,variavely)
+
+library(ggplot2)
+
+
+ggplot(dados,aes(x=variavelx,y=variavely))+
+geom_bar(stat="identity")
+
+@
+
+
+\end{frame}
+%======================================================
+
+
+%========== Contatos ===================================
+
+\section{Contatos}
+    \begin{frame}[plain]
+        \vfill
+      \centering
+      \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}\insertsectionhead\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt} \\
+        \LARGE{\faFileTextO}
+      \end{beamercolorbox}
+      \vfill
+  \end{frame}
+  
+%=============Contato=================================
+\subsection{Dúvidas, críticas e sugestões: Meus contatos}
+\begin{frame}{Contacte-me}
+
+\includegraphics[width=2.5cm]{me.jpg}
+
+\begin{itemize}
+
+   % \item \href{https://public.tableau.com/profile/rodrigoozon#!/}{Minha página no \textcolor{blue}{Tableau}}
+    %\item \href{https://api.whatsapp.com/send?phone=5541988382904&text=Ol\%C3\%A1\%20prof.\%20Rodrigo\%2C\%20participei\%20de\%20sua\%20banca\%20na\%20FAE...}{\textcolor{blue}{me mande um zapzap ...}}
+    \item Me envie um e-mail \textcolor{blue}{\href{mailto:rodrigo.ozon@ext.rumolog.com}{rodrigo.ozon@ext.rumolog.com.br}}
+    \item Meu perfil no  \href{https://www.linkedin.com/in/rodrigohermontozon/}{\textcolor{blue}{LinkeDin \faLinkedin}}
+\end{itemize}
+
+\vspace{.025cm}
+\begin{center}
+    ...Mutíssimo obrigado a todos! \faSmileO
+    
+    Sl 50:23
+\end{center}
+\end{frame}
+
+%=====================================================
+
+
+
+%=====================================================
+\begin{frame}{Referências}
+\footnotesize
+\begin{thebibliography}{}
+
+\bibitem{angrist} ANGRIST, J. ,PISCHKE, J., S. \textit{Mostly Harmless Econometrics: An Empiricist´s Companion}, Março de 2008.
+
+\bibitem{rumo} Rumo Logística $<$ \href{https://rumolog.com/}{\textcolor{blue}{Website da Companhia}} $>$
+ 
+\end{thebibliography}
+\end{frame}
+%=====================================================
+
+
+
+
+
+
+
+%=====================================================
+\end{document}
+%=====================================================
